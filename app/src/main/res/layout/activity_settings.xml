@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <ImageButton android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_revert" android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/text_primary"/>
+            <TextView android:text="Settings" android:textColor="@color/text_primary"
+                android:textSize="20sp" android:textStyle="bold" android:paddingStart="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView android:text="ERPNext Connection" android:textColor="@color/text_primary"
+            android:textSize="15sp" android:textStyle="bold"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface" app:cardElevation="0dp"
+            app:strokeColor="@color/border" app:strokeWidth="1dp" app:cardCornerRadius="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:text="ERPNext URL" android:textColor="@color/text_secondary" android:textSize="11sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/etUrl" android:layout_width="match_parent" android:layout_height="44dp"
+                    android:textColor="@color/text_primary" android:background="@color/surface_elevated"
+                    android:padding="10dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="API Key" android:textColor="@color/text_secondary" android:textSize="11sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/etApiKey" android:layout_width="match_parent" android:layout_height="44dp"
+                    android:textColor="@color/text_primary" android:background="@color/surface_elevated"
+                    android:padding="10dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="API Secret" android:textColor="@color/text_secondary" android:textSize="11sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/etApiSecret" android:layout_width="match_parent" android:layout_height="44dp"
+                    android:inputType="textPassword" android:textColor="@color/text_primary"
+                    android:background="@color/surface_elevated" android:padding="10dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="POS Profile" android:textColor="@color/text_secondary" android:textSize="11sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/etPosProfile" android:layout_width="match_parent" android:layout_height="44dp"
+                    android:textColor="@color/text_primary" android:background="@color/surface_elevated"
+                    android:padding="10dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="Company" android:textColor="@color/text_secondary" android:textSize="11sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/etCompany" android:layout_width="match_parent" android:layout_height="44dp"
+                    android:textColor="@color/text_primary" android:background="@color/surface_elevated"
+                    android:padding="10dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView android:id="@+id/tvConnectionStatus" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:textColor="@color/text_secondary" android:textSize="13sp"/>
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:visibility="gone" android:indeterminateTint="@color/primary" android:layout_marginTop="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="16dp">
+            <Button android:id="@+id/btnTest" android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1" android:layout_marginEnd="8dp" android:text="Test Connection"
+                android:backgroundTint="@color/blue" android:textColor="@color/white"
+                style="@style/Widget.MaterialComponents.Button"/>
+            <Button android:id="@+id/btnSave" android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1" android:text="Save Settings"
+                android:backgroundTint="@color/green" android:textColor="@color/white"
+                style="@style/Widget.MaterialComponents.Button"/>
+        </LinearLayout>
+        <Button android:id="@+id/btnLogout" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="12dp" android:text="Logout &amp; Reset"
+            android:backgroundTint="@color/red_soft" android:textColor="@color/red"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+</ScrollView>

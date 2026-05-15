@@ -1,9 +1,0 @@
-/build
-.gradle
-.idea
-.idea/soleap-app.iml
-.idea/modules.xml
-.idea/misc.xml
-.idea/gradle.xml
-/gradle
-gradlew.bat

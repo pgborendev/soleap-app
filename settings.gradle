@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "soleap-app"
+rootProject.name = "RestaurantPOS"
+include ':app'

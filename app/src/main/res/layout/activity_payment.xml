@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <ImageButton android:id="@+id/btnCancel" android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_revert" android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/text_primary"/>
+            <TextView android:text="Process Payment" android:textColor="@color/text_primary"
+                android:textSize="20sp" android:textStyle="bold" android:paddingStart="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Total Amount -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/surface" app:cardElevation="0dp"
+            app:strokeColor="@color/primary" app:strokeWidth="2dp" app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                android:gravity="center" android:orientation="vertical">
+                <TextView android:text="TOTAL DUE" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvTotal" android:text="$0.00" android:textColor="@color/primary"
+                    android:textSize="36sp" android:textStyle="bold"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Payment Method -->
+        <TextView android:text="Payment Method" android:textColor="@color/text_primary"
+            android:textSize="15sp" android:textStyle="bold"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="24dp" android:layout_marginBottom="8dp"/>
+        <RadioGroup android:id="@+id/rgPaymentMethod" android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/rbCash" android:text="💵  Cash" android:checked="true"
+                android:textColor="@color/text_primary"
+                android:layout_width="match_parent" android:layout_height="48dp"/>
+            <RadioButton android:id="@+id/rbCard" android:text="💳  Credit / Debit Card"
+                android:textColor="@color/text_primary"
+                android:layout_width="match_parent" android:layout_height="48dp"/>
+            <RadioButton android:id="@+id/rbQR" android:text="📱  QR Code / ABA / KHQR"
+                android:textColor="@color/text_primary"
+                android:layout_width="match_parent" android:layout_height="48dp"/>
+        </RadioGroup>
+
+        <!-- Tendered / Reference -->
+        <TextView android:text="Amount Tendered" android:textColor="@color/text_secondary"
+            android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+        <EditText android:id="@+id/etTendered" android:layout_width="match_parent" android:layout_height="48dp"
+            android:inputType="numberDecimal" android:textColor="@color/text_primary"
+            android:background="@color/surface_elevated" android:padding="12dp" android:layout_marginTop="4dp"/>
+
+        <TextView android:text="Change" android:textColor="@color/text_secondary"
+            android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+        <TextView android:id="@+id/tvChange" android:text="$0.00" android:textColor="@color/green"
+            android:textSize="18sp" android:textStyle="bold"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"/>
+
+        <EditText android:id="@+id/etReference" android:layout_width="match_parent" android:layout_height="48dp"
+            android:hint="Reference / Transaction No." android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:background="@color/surface_elevated" android:padding="12dp"
+            android:layout_marginTop="12dp" android:visibility="gone"/>
+
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center"
+            android:visibility="gone" android:indeterminateTint="@color/primary"
+            android:layout_marginTop="16dp"/>
+
+        <Button android:id="@+id/btnConfirm" android:layout_width="match_parent" android:layout_height="56dp"
+            android:layout_marginTop="20dp" android:text="Confirm Payment → Post to ERPNext"
+            android:backgroundTint="@color/green" android:textColor="@color/white" android:textStyle="bold"
+            android:textSize="15sp" style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+</ScrollView>

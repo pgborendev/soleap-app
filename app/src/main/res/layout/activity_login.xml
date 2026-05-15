@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp" android:gravity="center_horizontal">
+        <TextView android:text="🍽️" android:textSize="56sp" android:layout_marginTop="48dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Restaurant POS" android:textColor="@color/text_primary"
+            android:textSize="26sp" android:textStyle="bold" android:layout_marginTop="12dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Connect to ERPNext URYPOS" android:textColor="@color/text_secondary"
+            android:textSize="14sp" android:layout_marginTop="4dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardElevation="0dp" app:strokeColor="@color/border" app:strokeWidth="1dp"
+            app:cardCornerRadius="16dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <TextView android:text="ERPNext URL *" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUrl" android:layout_width="match_parent" android:layout_height="48dp"
+                    android:hint="https://your-erp.example.com" android:inputType="textUri"
+                    android:background="@color/surface_elevated" android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint" android:padding="12dp"
+                    android:layout_marginTop="4dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="API Key *" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etApiKey" android:layout_width="match_parent" android:layout_height="48dp"
+                    android:hint="Your API Key" android:background="@color/surface_elevated"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:padding="12dp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="API Secret *" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etApiSecret" android:layout_width="match_parent" android:layout_height="48dp"
+                    android:hint="Your API Secret" android:inputType="textPassword"
+                    android:background="@color/surface_elevated" android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint" android:padding="12dp"
+                    android:layout_marginTop="4dp" android:layout_marginBottom="12dp"/>
+
+                <TextView android:text="POS Profile" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPosProfile" android:layout_width="match_parent" android:layout_height="48dp"
+                    android:hint="Restaurant POS" android:background="@color/surface_elevated"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:padding="12dp" android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:visibility="gone" android:indeterminateTint="@color/primary"/>
+        <Button android:id="@+id/btnConnect" android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_marginTop="20dp" android:text="Connect &amp; Login"
+            android:backgroundTint="@color/primary" android:textColor="@color/white"
+            android:textSize="16sp" android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Get API credentials from ERPNext → Settings → API Access"
+            android:textColor="@color/text_hint" android:textSize="11sp" android:gravity="center"/>
+    </LinearLayout>
+</ScrollView>
